@@ -1,0 +1,42 @@
+{
+  "lang": "it",
+  "header": {
+    "logout": "Esci",
+    "login": "Accedi",
+    "lang": "Lingua"
+  },
+  "pages": {},
+  "labels": {
+    "buttons": {}
+  },
+  "errors": {
+    "generic": "Errore generico",
+    "signin": "login failed",
+    "permission": "Errore: Autorizzazione negata. Non disponi delle autorizzazioni necessarie per eseguire questa azione",
+    "auth": "Si è verificato un errore. Prova a ricaricare la pagina.",
+    "release": "Rilascio del lavoro fallito. Il lavoro rimane assegnato a te.",
+    "GD00500": "Si è verificato un errore di sistema. Prova a ricaricare la pagina. Se il problema persiste, contattare l'assistenza",
+    "GD1000": "Modalità manuale, ritorno alla coda lavori",
+    "GD1001": "Si è verificato un errore di sistema. Prova a ricaricare la pagina. Se il problema persiste, contattare l'assistenza",
+    "GD1002": "Si è verificato un errore di sistema. Prova a ricaricare la pagina. Se il problema persiste, contattare l'assistenza",
+    "GD1003": "Si è verificato un errore di sistema. Prova a ricaricare la pagina. Se il problema persiste, contattare l'assistenza",
+    "GD2001": "Riprova",
+    "GD3001": "Richiesta non valida. Probabile errore di sistema, riprova o contatta l'assistenza",
+    "GD3002": "ID rapporto non trovato",
+    "GD3003": "Lavoro non trovato",
+    "GD00314": "Si è verificato un errore di sistema. Prova a ricaricare la pagina. Se il problema persiste, contattare l'assistenza",
+    "GD00317": "Nessun lavoro trovato",
+    "GDSR003": "Il token di assegnazione è scaduto",
+    "GD00508": "Nessun account SSO identificato",
+    "GD00400": "Non autorizzato",
+    "GD00401": "Sessione utente scaduta"
+  },
+  "loadings": {
+    "generic": "in corso...",
+    "login": "Autenticazione in corso ...",
+    "logout": "disconnessione ...",
+    "job": "caricamento in corso ..."
+  },
+  "messages": {},
+  "documents": {}
+}

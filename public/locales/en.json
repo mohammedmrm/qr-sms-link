@@ -1,0 +1,41 @@
+{
+  "lang": "en",
+  "header": {
+    "logout": "Sign out",
+    "login": "Sign in",
+    "lang": "Language"
+  },
+  "pages": {},
+  "labels": {
+    "buttons": {}
+  },
+  "errors": {
+    "generic": "Generic error",
+    "signin": "login failed",
+    "permission": "Error: Permission denied. You do not have the necessary permissions to perform this action",
+    "auth": "An error occurred. Try reloading the page.",
+    "release": "Job release failed. The job remains assigned to you.",
+    "GD00500": "A system error occurred. Try reloading the page. If the problem persists then contact the technical assistance",
+    "GD1000": "Manual mode. Back to jobs table",
+    "GD1001": "A system error occurred. Try reloading the page. If the problem persists then contact the technical assistance",
+    "GD1002": "A system error occurred. Try reloading the page. If the problem persists then contact the technical assistance",
+    "GD1003": "A system error occurred. Try reloading the page. If the problem persists then contact the technical assistance",
+    "GD2001": "Riprova",
+    "GD3002": "Report id not found",
+    "GD3003": "Job not found",
+    "GD00314": "Illegal request. Probably a system error. Retry or contact technical assistance",
+    "GD00317": "Not found",
+    "GDSR003": "Assignment token has been expired",
+    "GD00508": "No logged user",
+    "GD00400": "Unauthorized",
+    "GD00401": "User session expired"
+  },
+  "loadings": {
+    "generic": "Loading...",
+    "login": "Authentication in progress ...",
+    "logout": "logging out ...",
+    "start": "Starting Transaction ..."
+  },
+  "messages": {},
+  "documents": {}
+}
