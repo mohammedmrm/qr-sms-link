@@ -7,7 +7,7 @@ const QrAsia: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('222');
   const [phone, setPhone] = useState('');
-  const [price, setPrice] = useState(1000);
+  const [price, setPrice] = useState(5000);
   const [textBelow, setTextBelow] = useState(`تبرع بـ ${price} دينار الى ${phone}`);
   const [SMSUrl, setSMSUrl] = useState();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -124,24 +124,23 @@ const QrAsia: React.FC = () => {
       <input
         type="text"
         placeholder="Enter phone number"
+        readOnly
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
         className="border rounded p-2 w-full"
         style={{ fontFamily: 'Cairo, sans-serif' }}
       />
       <input
-        placeholder="Donate to"
+        placeholder={'تبرع لـ ' + ' رقم الهاتف '}
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         className="border rounded p-2 w-full"
-        style={{ fontFamily: 'Cairo, sans-serif' }}
       />
       <input
-        placeholder="Price"
+        placeholder="المبلغ"
         value={price}
         onChange={(e) => setPrice(Number(e.target.value))}
         className="border rounded p-2 w-full"
-        style={{ fontFamily: 'Cairo, sans-serif' }}
       />
       <input
         type="text"
@@ -149,7 +148,6 @@ const QrAsia: React.FC = () => {
         value={textBelow}
         onChange={(e) => setTextBelow(e.target.value)}
         className="border rounded p-2 w-full"
-        style={{ fontFamily: 'Cairo, sans-serif' }}
       />
       {/* QR Code Preview with Appended Text */}
       <div className="bg-gray-100 p-4 rounded shadow">
