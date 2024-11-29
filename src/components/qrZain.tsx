@@ -1,17 +1,20 @@
 import { QRCodeCanvas } from 'qrcode.react';
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import LoadingOver from './common/loadingOver';
 
-const QrAsia: React.FC = () => {
-  const [phoneNumber, setPhoneNumber] = useState('222');
+const QrZain: React.FC = () => {
+  const [loading, setLoading] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('21112');
   const [phone, setPhone] = useState('07701298042');
   const [price, setPrice] = useState('');
   const [textBelow, setTextBelow] = useState(`تبرع بـ ${price} دينار الى ${phone}`);
   const [SMSUrl, setSMSUrl] = useState();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const smsString = `${phoneNumber}?&body=${encodeURIComponent(`${price},${phone}`)}`;
+  const smsString = `${phoneNumber}?&body=${encodeURIComponent(`${phone} ${price}`)}`;
   // Function to shorten the SMS URL using smolurl.com API
   const shortenUrl = async (url: string) => {
+    setLoading(true);
     const apiUrl = 'https://smolurl.com/api/links';
     const body = {
       url: `sms://${url}`, // This format mimics the SMS URL structure you're requesting
@@ -42,6 +45,8 @@ const QrAsia: React.FC = () => {
       toast.error('Short URL error2');
 
       return url; // If fetch fails, return original SMS URL
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -109,8 +114,10 @@ const QrAsia: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center space-y-4 p-4">
-      <h1 className="text-xl font-bold" style={{ fontFamily: 'Cairo, sans-serif' }}>
-        SMS QR Code Generator
+      {loading && <LoadingOver />}
+      <h1 className="text-xl font-bold flex place-content-center gap-2 place-items-center">
+        SMS link & QR
+        <img src="/img/zain.png" className="h-10" />
       </h1>
       <input
         type="text"
@@ -181,8 +188,9 @@ const QrAsia: React.FC = () => {
           Get link
         </button>
       </div>
+      <hr className="w-full border-b-2" />
     </div>
   );
 };
 
-export default QrAsia;
+export default QrZain;

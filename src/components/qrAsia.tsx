@@ -1,11 +1,13 @@
 import { QRCodeCanvas } from 'qrcode.react';
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import LoadingOver from './common/loadingOver';
 
 const QrAsia: React.FC = () => {
+  const [loading, setLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('222');
-  const [phone, setPhone] = useState('07701298042');
-  const [price, setPrice] = useState('');
+  const [phone, setPhone] = useState('');
+  const [price, setPrice] = useState(1000);
   const [textBelow, setTextBelow] = useState(`تبرع بـ ${price} دينار الى ${phone}`);
   const [SMSUrl, setSMSUrl] = useState();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -13,6 +15,7 @@ const QrAsia: React.FC = () => {
   const smsString = `${phoneNumber}?&body=${encodeURIComponent(`${price},${phone}`)}`;
   // Function to shorten the SMS URL using smolurl.com API
   const shortenUrl = async (url: string) => {
+    setLoading(true);
     const apiUrl = 'https://smolurl.com/api/links';
     const body = {
       url: `sms://${url}`, // This format mimics the SMS URL structure you're requesting
@@ -43,6 +46,8 @@ const QrAsia: React.FC = () => {
       toast.error('Short URL error2');
 
       return url; // If fetch fails, return original SMS URL
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -110,8 +115,11 @@ const QrAsia: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center space-y-4 p-4">
-      <h1 className="text-xl font-bold" style={{ fontFamily: 'Cairo, sans-serif' }}>
-        SMS QR Code Generator
+      {loading && <LoadingOver />}
+
+      <h1 className="text-xl font-bold flex place-content-center gap-2 place-items-center">
+        SMS link & QR
+        <img src="/img/ac.svg" className="h-10" />
       </h1>
       <input
         type="text"
@@ -131,7 +139,7 @@ const QrAsia: React.FC = () => {
       <input
         placeholder="Price"
         value={price}
-        onChange={(e) => setPrice(e.target.value)}
+        onChange={(e) => setPrice(Number(e.target.value))}
         className="border rounded p-2 w-full"
         style={{ fontFamily: 'Cairo, sans-serif' }}
       />
@@ -182,6 +190,7 @@ const QrAsia: React.FC = () => {
           Get link
         </button>
       </div>
+      <hr className="w-full border-b-2" />
     </div>
   );
 };
