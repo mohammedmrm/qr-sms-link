@@ -1,34 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Cairo';
+}
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+  width: 7px;
+  height: 7px;
 }
 
 *::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background-color: #DFE9EB;
+  border-radius: 5px;
+  background-color: #dfe9eb;
 }
 
 *::-webkit-scrollbar-track:hover {
-    background-color: #A0A6A8;
+  background-color: #a0a6a8;
 }
 
 *::-webkit-scrollbar-track:active {
-    background-color: #B8C0C2;
+  background-color: #b8c0c2;
 }
 
 *::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #CACACA;
+  border-radius: 10px;
+  background-color: #cacaca;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #1D3016;
+  background-color: #1d3016;
 }
 
 *::-webkit-scrollbar-thumb:active {
-    background-color: #192913;
+  background-color: #192913;
 }

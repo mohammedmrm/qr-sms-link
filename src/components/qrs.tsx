@@ -1,9 +1,9 @@
-import QSmsQrGenerator2 from './qr2';
+import QrAsia from './qrAsia';
 
 const QRS = () => {
   return (
     <div className="flex gap-5 justify-center">
-      <QSmsQrGenerator2 />
+      <QrAsia />
     </div>
   );
 };

@@ -14,9 +14,9 @@ fi
 
 
 if [ ${STAGE} == test ] ; then
-    DEST=static-website-deploy@10.208.2.27:/opt/apps/static_website/backoffice-operativo.test.geniodiligence.it/mandato_rao
+    DEST=root@store.almalkexpress.com:/var/www/html/qr
 elif [ ${STAGE} == prod ] ; then
-    DEST=static-website-deploy@10.208.2.27:/opt/apps/static_website/backoffice-operativo.geniodiligence.it/mandato_rao
+    DEST=root@store.almalkexpress.com:/var/www/html/qr
 else
     die unknown stage ${STAGE}
 fi

@@ -1,15 +1,15 @@
-import Notfound from "@/components/common/notfound";
-import QRS from "@/components/dev_only/qrs";
-import { createBrowserRouter } from "react-router-dom";
+import Notfound from '@/components/common/notfound';
+import Dashboard from '@/pages/dashboard';
+import { createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter(
   [
     {
-      path: "/",
-      element: <QRS />,
+      path: '/',
+      element: <Dashboard />,
     },
     {
-      path: "*",
+      path: '*',
       element: <Notfound />,
     },
   ],
