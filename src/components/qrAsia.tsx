@@ -119,7 +119,7 @@ const QrAsia: React.FC = () => {
 
       <h1 className="text-xl font-bold flex place-content-center gap-2 place-items-center">
         SMS link & QR
-        <img src="/img/ac.svg" className="h-10" />
+        <img src={import.meta.env.BASE_URL + '/img/ac.svg'} className="h-10" />
       </h1>
       <input
         type="text"
